@@ -1,28 +1,30 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-5">
   <div class="container">
-    <a href="#" class="navbar-brand">DASHABOARD</a>
+    <a routerLink="/" class="navbar-brand">DASHABOARD</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarMain">
 
       <!-- Leftside -->
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link">Dashboard</a>
+          <a routerLink="/" class="nav-link">Dashboard</a>
         </li>
       </ul>
 
       <!-- Rightside -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a href="#" class="nav-link">Register</a>
+          <a routerLink="/register" class="nav-link">Register</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">Login</a>
+          <a routerLink="/login" class="nav-link">Login</a>
         </li>
       </ul>
 
-    </div>
-  </div>
+    </div> <!-- navbar-collapse -->
+  </div> <!-- container -->
 </nav>
