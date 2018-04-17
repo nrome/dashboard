@@ -11,13 +11,22 @@ export class ClientsComponent implements OnInit {
 
   // define properties
   clients: Client[];
+  outstandingTotal: number;
 
   // inject dependency services in the constructor
   constructor(private clientService: ClientService) { }
 
   ngOnInit() {
-    this.clientService.getClients().subscribe
-    (clients => this.clients = clients);
+    this.clientService.getClients().subscribe(clients => {
+      this.clients = clients;
+      this.getOutstandingTotal();
+    });
+  }
+
+  getOutstandingTotal() {
+    this.outstandingTotal = this.clients.reduce((total, client) => {
+      return total + client.balance;
+    }, 0);
   }
 
 }
