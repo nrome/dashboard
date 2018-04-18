@@ -25,7 +25,7 @@ export class ClientsComponent implements OnInit {
 
   getOutstandingTotal() {
     this.outstandingTotal = this.clients.reduce((total, client) => {
-      return total + client.balance;
+      return total + parseFloat(client.balance.toString());
     }, 0);
   }
 
