@@ -1,8 +1,10 @@
+// angular
 import { Component, OnInit, ViewChild } from '@angular/core';
+// services
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { ClientService } from '../../services/client.service';
 import { Router } from '@angular/router';
-
+// models
 import { Client } from '../../models/client';
 
 @Component({
