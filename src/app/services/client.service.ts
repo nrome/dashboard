@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+
 import { Client } from '../models/client';
 
 @Injectable()
@@ -33,6 +34,10 @@ export class ClientService {
     });
 
     return this.clients;
+  }
+
+  newClient(client: Client) {
+    this.clientsCollection.add(client);
   }
 
 }
