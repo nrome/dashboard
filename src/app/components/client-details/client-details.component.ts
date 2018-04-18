@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 // models
 import { Client } from '../../models/client';
-import { Subscriber } from 'rxjs/Subscriber';
+import { FlashMessagesModule } from 'angular2-flash-messages/module/module';
 
 @Component({
   selector: 'app-client-details',
@@ -43,7 +43,17 @@ export class ClientDetailsComponent implements OnInit {
   }
 
   onDeleteClick() {
-    // method for on delete action
+    // create delete confirmation
+    if (confirm('Are you sure?')) {
+      // call service.method
+      this.clientService.deleteClient(this.client);
+      // offer response/feedback
+      this.flashMessage.show('Client removed', {
+        cssClass: 'alert-success', timeout: 4000
+      });
+      // redirect
+      this.router.navigate(['/']);
+    }
   }
 
   updateBalance() {
