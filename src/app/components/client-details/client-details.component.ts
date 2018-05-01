@@ -6,7 +6,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 // models
 import { Client } from '../../models/client';
-import { FlashMessagesModule } from 'angular2-flash-messages/module/module';
 
 @Component({
   selector: 'app-client-details',
